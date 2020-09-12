@@ -25,6 +25,7 @@ import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.data.ItemsContract;
 import com.example.xyzreader.data.UpdaterService;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -64,6 +65,11 @@ public class ArticleListActivity extends AppCompatActivity implements
         if (savedInstanceState == null) {
             refresh();
         }
+
+        Snackbar mySnackbar = Snackbar.make(toolbarContainerView,
+                R.string.snackbar_in_use, Snackbar.LENGTH_SHORT);
+//        mySnackbar.setAction(R.string.undo_string, new MyUndoListener());
+        mySnackbar.show();
     }
 
     private void refresh() {
